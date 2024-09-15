@@ -9,5 +9,5 @@ class Category extends Model
 {
     use HasFactory;
     // تحديد الحقول القابلة للتعبئة
-    protected $fillable = ['name'];
+    protected $fillable = ['name','photo'];
 }
