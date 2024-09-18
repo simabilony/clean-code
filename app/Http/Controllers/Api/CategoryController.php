@@ -12,6 +12,8 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Str;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Endpoint;
+use OpenApi\Annotations as OA;
+
 #[Group('Categories', 'Managing Categories')]
 /**
  * @group Categories
@@ -20,6 +22,25 @@ use Knuckles\Scribe\Attributes\Endpoint;
  */
 class CategoryController extends Controller
 {
+    /**
+     * @OA\Get(
+     *     path="/categories",
+     *     tags={"Categories"},
+     *     summary="Get list of categories",
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *     ),
+     *     @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *     ),
+     *     @OA\Response(
+     *          response=403,
+     *          description="Forbidden",
+     *     )
+     * )
+     */
     public function index()
     {
         abort_if(! auth()->user()->tokenCan('categories-list'), 403);
