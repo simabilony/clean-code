@@ -47,7 +47,35 @@ class CategoryController extends Controller
         return CategoryResource::collection(Category::all());
 //        return Category::all();
     }
-
+    /**
+     * @OA\Get(
+     *     path="/categories/{category}",
+     *     tags={"Categories"},
+     *     summary="Get a single category",
+     *     @OA\Parameter(
+     *         name="category",
+     *         in="path",
+     *         required=true,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation",
+     *     ),
+     *     @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *     ),
+     *     @OA\Response(
+     *          response=403,
+     *          description="Forbidden",
+     *     ),
+     *     @OA\Response(
+     *          response=404,
+     *          description="Not Found",
+     *     )
+     * )
+     */
     public function show(Category $category)
     {
         abort_if(! auth()->user()->tokenCan('categories-show'), 403);
@@ -58,7 +86,33 @@ class CategoryController extends Controller
     {
         return CategoryResource::collection(Category::all());
     }
-
+    /**
+     * @OA\Post(
+     *     path="/categories",
+     *     tags={"Categories"},
+     *     summary="Create a new category",
+     *     @OA\RequestBody(
+     *         required=true,
+     *         @OA\JsonContent(ref="#/components/schemas/StoreCategoryRequest")
+     *     ),
+     *     @OA\Response(
+     *         response=201,
+     *         description="Category created successfully",
+     *     ),
+     *     @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *     ),
+     *     @OA\Response(
+     *          response=403,
+     *          description="Forbidden",
+     *     ),
+     *     @OA\Response(
+     *          response=422,
+     *          description="Validation Error",
+     *     )
+     * )
+     */
     /**
      * @param StoreCategoryRequest $request
      * @return CategoryResource
@@ -75,17 +129,47 @@ class CategoryController extends Controller
         $category = Category::create($data);
         return new CategoryResource($category);
     }
+
     public function update(Category $category, StoreCategoryRequest $request)
     {
         $category->update($request->all());
-
         return new CategoryResource($category);
     }
+
+    /**
+     * @OA\Delete(
+     *     path="/categories/{category}",
+     *     tags={"Categories"},
+     *     summary="Delete a category",
+     *     @OA\Parameter(
+     *         name="category",
+     *         in="path",
+     *         required=true,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(
+     *         response=204,
+     *         description="Category deleted successfully",
+     *     ),
+     *     @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated",
+     *     ),
+     *     @OA\Response(
+     *          response=403,
+     *          description="Forbidden",
+     *     ),
+     *     @OA\Response(
+     *          response=404,
+     *          description="Not Found",
+     *     )
+     * )
+     */
     public function destroy(Category $category)
     {
-        Product::where('category_id'  , $category->id)->delete();
+        Product::where('category_id', $category->id)->delete();
         $category->delete();
-       // return response()->noContent();
-         return response(null, Response::HTTP_NO_CONTENT);
+        return response(null, Response::HTTP_NO_CONTENT);
     }
+
 }
