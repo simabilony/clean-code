@@ -18,7 +18,8 @@ Route::post('categories', [CategoryController::class, 'store']);
 Route::put('categories/{category}', [CategoryController::class, 'update']);
 Route::delete('categories/{category}', [CategoryController::class, 'destroy']);
 //Route::apiResource('categories', \App\Http\Controllers\Api\CategoryController::class); //5in1
-Route::get('products', [\App\Http\Controllers\Api\ProductController::class, 'index']);
+Route::get('products', [\App\Http\Controllers\Api\ProductController::class, 'index'])
+    ->middleware('throttle:products');
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('categories', \App\Http\Controllers\Api\CategoryController::class)
