@@ -1,0 +1,398 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/lists/categories:
+    get:
+      summary: ''
+      operationId: getApiListsCategories
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 2
+                      name: 'doloribus voluptas eos'
+                    -
+                      id: 3
+                      name: 'quasi modi facilis'
+                    -
+                      id: 4
+                      name: 'earum velit voluptatibus'
+                    -
+                      id: 5
+                      name: 'assumenda vitae impedit'
+                    -
+                      id: 6
+                      name: 'omnis aut quisquam'
+                    -
+                      id: 7
+                      name: 'animi dolorum eligendi'
+                    -
+                      id: 8
+                      name: 'velit doloremque molestiae'
+                    -
+                      id: 9
+                      name: 'sequi rerum sapiente'
+                    -
+                      id: 10
+                      name: 'quo non quidem'
+                    -
+                      id: 11
+                      name: "new cate\nfo"
+                    -
+                      id: 12
+                      name: "new cate\nfo"
+                    -
+                      id: 13
+                      name: "new cate\nfo"
+                    -
+                      id: 14
+                      name: "new cate\nfo"
+                    -
+                      id: 15
+                      name: "new cate\nfo"
+                    -
+                      id: 16
+                      name: "new cate\nfo"
+                    -
+                      id: 17
+                      name: "new cate\nfo"
+                    -
+                      id: 18
+                      name: "new cate\nfo"
+                    -
+                      id: 19
+                      name: "new cate\nfo"
+                    -
+                      id: 20
+                      name: "new cate\nfo"
+                    -
+                      id: 21
+                      name: "new cate\nfo"
+                    -
+                      id: 22
+                      name: "new cate\nfo"
+                    -
+                      id: 23
+                      name: "new cate\nfo"
+                    -
+                      id: 24
+                      name: test
+                    -
+                      id: 25
+                      name: test
+                    -
+                      id: 26
+                      name: test
+                    -
+                      id: 27
+                      name: test
+                    -
+                      id: 28
+                      name: test
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 2
+                        name: 'doloribus voluptas eos'
+                      -
+                        id: 3
+                        name: 'quasi modi facilis'
+                      -
+                        id: 4
+                        name: 'earum velit voluptatibus'
+                      -
+                        id: 5
+                        name: 'assumenda vitae impedit'
+                      -
+                        id: 6
+                        name: 'omnis aut quisquam'
+                      -
+                        id: 7
+                        name: 'animi dolorum eligendi'
+                      -
+                        id: 8
+                        name: 'velit doloremque molestiae'
+                      -
+                        id: 9
+                        name: 'sequi rerum sapiente'
+                      -
+                        id: 10
+                        name: 'quo non quidem'
+                      -
+                        id: 11
+                        name: "new cate\nfo"
+                      -
+                        id: 12
+                        name: "new cate\nfo"
+                      -
+                        id: 13
+                        name: "new cate\nfo"
+                      -
+                        id: 14
+                        name: "new cate\nfo"
+                      -
+                        id: 15
+                        name: "new cate\nfo"
+                      -
+                        id: 16
+                        name: "new cate\nfo"
+                      -
+                        id: 17
+                        name: "new cate\nfo"
+                      -
+                        id: 18
+                        name: "new cate\nfo"
+                      -
+                        id: 19
+                        name: "new cate\nfo"
+                      -
+                        id: 20
+                        name: "new cate\nfo"
+                      -
+                        id: 21
+                        name: "new cate\nfo"
+                      -
+                        id: 22
+                        name: "new cate\nfo"
+                      -
+                        id: 23
+                        name: "new cate\nfo"
+                      -
+                        id: 24
+                        name: test
+                      -
+                        id: 25
+                        name: test
+                      -
+                        id: 26
+                        name: test
+                      -
+                        id: 27
+                        name: test
+                      -
+                        id: 28
+                        name: test
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 2
+                        name:
+                          type: string
+                          example: 'doloribus voluptas eos'
+      tags:
+        - Endpoints
+      security: []
+  /api/categories:
+    get:
+      summary: ''
+      operationId: getApiCategories
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiCategories
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: adipisci
+              required:
+                - name
+      security: []
+  '/api/categories/{id}':
+    get:
+      summary: ''
+      operationId: getApiCategoriesId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiCategoriesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiCategoriesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: quidem
+              required:
+                - name
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the category.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  '/api/categories/{category_id}':
+    put:
+      summary: ''
+      operationId: putApiCategoriesCategory_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: quod
+              required:
+                - name
+      security: []
+    parameters:
+      -
+        in: path
+        name: category_id
+        description: 'The ID of the category.'
+        example: 2
+        required: true
+        schema:
+          type: integer
+  /api/products:
+    get:
+      summary: ''
+      operationId: getApiProducts
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/sanctum/token:
+    post:
+      summary: ''
+      operationId: postApiSanctumToken
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''

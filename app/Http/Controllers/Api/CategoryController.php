@@ -10,7 +10,14 @@ use App\Models\Product;
 use http\Env\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Str;
-
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Endpoint;
+#[Group('Categories', 'Managing Categories')]
+/**
+ * @group Categories
+ *
+ * Managing Categories
+ */
 class CategoryController extends Controller
 {
     public function index()

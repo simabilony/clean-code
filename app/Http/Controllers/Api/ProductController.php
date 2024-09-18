@@ -6,7 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use Illuminate\Http\Request;
-
+use Knuckles\Scribe\Attributes\Group;
+/**
+ * @group Products
+ *
+ * Managing Products
+ */
+#[Group('Products', 'Managing Products')]
 class ProductController extends Controller
 {
     public function index()
