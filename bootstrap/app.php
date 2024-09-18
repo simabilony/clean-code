@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+        $middleware->statefulApi();
         $middleware->prependToGroup('api', \App\Http\Middleware\AlwaysAcceptJson::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {
