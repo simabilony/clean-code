@@ -19,4 +19,12 @@ class UserController extends Controller
 //
 //        // ...
 //    }
+// JOP class
+//    public function store(StoreUserRequest $request)
+//    {
+//        $user = (new CreateUserAction())->execute($request->validated());
+//        NewUserDataJob::dispatch($user);
+//
+//        // ...
+//    }
 }
