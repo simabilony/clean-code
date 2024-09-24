@@ -27,4 +27,13 @@ class UserController extends Controller
 //
 //        // ...
 //    }
+//event & job
+//    public function store(StoreUserRequest $request)
+//    {
+//        $user = (new CreateUserAction())->execute($request->validated());
+//        NewUserDataJob::dispatch($user);
+//
+//        NewUserRegistered::dispatch($user);
+//        //
+//    }
 }
