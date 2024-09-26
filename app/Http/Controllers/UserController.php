@@ -12,6 +12,7 @@ class UserController extends Controller
     public function store(StoreUserRequest $request, UserService $userService)
     {
         $user = $userService->create($request->validated());
+        return $this->respondOk($user);
     }
 //    public function store(StoreUserRequest $request, CreateUserAction $action)
 //    {

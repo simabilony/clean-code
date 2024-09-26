@@ -18,4 +18,11 @@ use OpenApi\Annotations as OA;
 abstract class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    public function respondOk($data)
+    {
+        return response()->json([
+            'result' => 'success',
+            'data' => $data,
+        ], 200);
+    }
 }
