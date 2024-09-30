@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Enums\UserRole;
 use App\Helpers\DateHelper;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -80,6 +81,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return Attribute::make(
             set: fn ($value) => DateHelper::convertToDB($value)
     );
+    }
+
+    public function hasAdminAccess(): bool
+    {
+        return in_array($this->role, [UserRole::Admin, UserRole::Employee]);
     }
 
 }
